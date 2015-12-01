@@ -63,3 +63,43 @@ Below is a sample command line:
 ```
 perl Varscan_multiple.pl --input_file=Input_1.txt --input_file=Input_2.txt --output_file=Output.bed --track_name=Name_of_track_in_IGV --chrom_size_file=Chrom_size_file.txt --raw_data_file=Raw_data_output.txt --minimum_consensus=2
 ```
+The chrom_size_file is a tab-delimited file:
+```
+LG1 31194787
+LG2 25048291
+LG3 19325363
+LG4 28679955
+LG5 37389089
+LG6 36725243
+LG7 51042256
+LG8_24 29447820
+LG9 20956653
+LG10 17092887
+...
+```
+* Column 1 -> Scaffold/Contig/Linkage Group/Chromosome
+* Column 2 -> Size of the Scaffold/Contig/Linkage Group/Chromosome in Column 1
+
+The raw_data_file is an output file which contains each position in the genome and whether is was called within an "amp", "del" or "neutral" window.
+```
+LG1	1	neutral	neutral
+LG1	2	neutral	neutral
+LG1	3	neutral	neutral
+LG1	4	neutral	neutral
+LG1	5	neutral	neutral
+LG1	6	neutral	neutral
+LG1	7	neutral	neutral
+LG1	8	neutral	neutral
+LG1	9	neutral	neutral
+LG1	10	neutral	neutral
+...
+```
+This file in future add-ons will be used to allow the user to run a script with various thresholds and make BED files from it. It is also an way of ground-truthing the data in the BED file.
+
+The threshold is how many "amp"s, "del"s or "neutral"s the user requires for it to be called. If the threshold is equal to the number of Varscan comparisons, then the "amp", "del", or "neutral" must be shared by all Varscan comparisons. However, if the threshold is less than the number of Varscan comparisions it only needs to be in some proportion of the comparisons.
+
+The track_name will be the name of the track in IGV.
+
+The file might look like this in your IGV browser:
+
+![alt tag](https://github.com/Gammerdinger/Varscan_multiple/blob/master/Varscan_multiple_example_IGV.png)
