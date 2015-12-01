@@ -21,4 +21,9 @@ As you can see, if population 1 (column 5) has a higher coverage than population
 ### Limitations of Varscan
 I believe that Varscan windows start once the coverage threshold has been meet and stop when the window size is reached or the coverage drops below the coverage threshold and the minimum window size has been reached. Therefore, Varscan doesn't start and stop windows at the same positions across different data sets and makes comparing results across datasets complicated. 
 
-
+Varscan_multiple.pl
+--------------
+### Goals
+Varscan_multiple.pl was written to compare multiple Varscan outputs to find common (or ancestral) deletions and insertions. 
+### Directionality Consideration
+When comparing your Varscan outputs, be sure to have a consistant directionality of each comparsion. For example, I have an interest in sex chromosome evolution. I each of my comparisons was males of a species compared to females of that same species.
