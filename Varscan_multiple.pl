@@ -130,7 +130,7 @@ open (RAW_DATA, ">$raw_data_file");
 
 my $LG_counter = 0;
 my $LG = $LG_array[$LG_counter];
-my $position = 0;
+my $position = 1;
 
 # Define initial VarScan values as neutral until they become defined by the VarScan output
 
@@ -167,7 +167,7 @@ do{
     }
     print RAW_DATA "\n";
     if ($position == $LG_size_hash{$LG}){
-        $position = 0;
+        $position = 1;
         $LG_counter = $LG_counter + 1;
         $LG = $LG_array[$LG_counter];
     }
