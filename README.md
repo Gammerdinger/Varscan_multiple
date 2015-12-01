@@ -80,6 +80,22 @@ LG10 17092887
 * Column 1 -> Scaffold/Contig/Linkage Group/Chromosome
 * Column 2 -> Size of the Scaffold/Contig/Linkage Group/Chromosome in Column 1
 
+The output_file will be a BED file that looks like:
+
+```
+track name=Name_of_track_in_IGV itemRgb="On"
+LG1	0	1087	neutral	0	+	0	1087	0,0,255
+LG1	1649	2048	amp	0	+	1649	2048	0,255,0
+LG1	2057	2412	neutral	0	+	2057	2412	0,0,255
+LG1	2515	2621	amp	0	+	2515	2621	0,255,0
+LG1	2649	3742	neutral	0	+	2649	3742	0,0,255
+LG1	4654	4742	del	0	+	4654	4742	255,0,0
+LG1	5758	6758	neutral	0	+	5758	6758	0,0,255
+LG1	7569	7599	neutral	0	+	7569	7599	0,0,255
+LG1	7647	8599	amp	0	+	7647	8599	0,255,0
+...
+```
+
 The raw_data_file is an output file which contains each position in the genome and whether is was called within an "amp", "del" or "neutral" window.
 ```
 LG1	1	neutral	neutral
